@@ -1,3 +1,5 @@
+import { IContact } from './IContact';
+
 export interface ILead {
   id: number;
   name: string;
@@ -26,5 +28,6 @@ export interface ILead {
   _embedded: {
     tags: any[];
     companies: any[];
+    contacts: IContact[];
   };
 }

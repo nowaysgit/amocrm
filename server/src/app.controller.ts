@@ -2,6 +2,8 @@ import { Controller, Get, Query } from '@nestjs/common';
 import { AppService } from './app.service';
 import { ILead } from './interfaces/ILead';
 import { IMessage } from './interfaces/IMessage';
+import { IUser } from './interfaces/IUser';
+import { IPipeline } from './interfaces/IPipeline';
 
 @Controller('api')
 export class AppController {
@@ -13,7 +15,14 @@ export class AppController {
   }
 
   @Get('/leads')
-  getLeads(@Query('query') query: string): Promise<ILead[] | IMessage> {
+  getLeads(@Query('query') query: string): Promise<
+    | {
+        leads: ILead[] | IMessage;
+        users: IUser[] | IMessage;
+        pipeline: IPipeline | IMessage;
+      }
+    | IMessage
+  > {
     return this.appService.getLeads(query);
   }
 
