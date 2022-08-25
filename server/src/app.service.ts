@@ -8,7 +8,10 @@ export class AppService {
   constructor(private readonly amocrmService: AmocrmService) {}
 
   async getLeads(query: string): Promise<ILead[] | IMessage> {
-    return this.amocrmService.getLeads(query || '');
+    if(query.length < 3) {
+      query = '';
+    }
+    return this.amocrmService.getLeads(encodeURIComponent(query) || '');
   }
 
   async Auth(code: string): Promise<IMessage> {
