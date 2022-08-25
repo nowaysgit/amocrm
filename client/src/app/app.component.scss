@@ -1,0 +1,142 @@
+.content {
+  padding-top: 4vw;
+  padding-left: 10vw;
+  padding-right: 10vw;
+  background-color: rgb(230,230,230);
+  min-height: 100vh;
+  box-sizing: border-box;
+
+  .header {
+    padding: 0.1em 1% 0 2%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(78,78,78);
+    margin-bottom: 30px;
+
+    h1 {
+      margin: 0;
+      color: white;
+    }
+
+    .form-field {
+      width: 30%;
+      color: white;
+    }
+  }
+
+  .loader {
+    height: 10px;
+  }
+
+  .notFound {
+    margin-top: 20px;
+  }
+
+  .error {
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    background-color: rgb(255,50,60);
+    color: white;
+    position: fixed;
+    bottom: 0;
+    width: 80vw;
+
+    h1 {
+      margin: 0 20px 0 0;
+    }
+    p {
+      margin: 0;
+    }
+  }
+}
+
+table {
+  width: 100%;
+}
+
+tr.detail-row {
+  height: 0;
+  background-color: rgb(50,50,50);
+}
+
+tr.element-row:not(.expanded-row):hover {
+  background-color: rgb(80,80,80);
+}
+
+tr.element-row:not(.expanded-row):active {
+  background-color: rgb(80,80,80);
+}
+
+.element-row td {
+  border-bottom-width: 0;
+}
+
+.element-detail {
+  overflow: hidden;
+  display: flex;
+}
+
+.element-diagram {
+  padding: 10px;
+  .title {
+    font-size: 11px;
+    color: rgba(255,255,255, 0.7);
+    margin-bottom: 0;
+  }
+}
+
+.element-symbol {
+  font-weight: bold;
+  font-size: 40px;
+  line-height: normal;
+}
+
+.element-description {
+  padding: 16px;
+}
+
+.element-description-attribution {
+  opacity: 0.5;
+}
+
+.cell-text {
+  display: flex;
+  align-items: center;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  padding: 6px;
+  border-radius: 1px;
+  width: fit-content;
+
+  .mat-chip-list {
+    margin-left: 20px;
+    font-size: 10px;
+
+    .mat-chip {
+      margin: 4px;
+      font-size: 8px;
+      padding: 10px 6px;
+      line-height: 50%;
+      border-radius: 1px;
+      min-height: 15px;
+    }
+  }
+}
+
+.mat-column-name {
+  width: 40%;
+}
+.mat-column-status_text {
+  width: 15%;
+}
+.mat-column-responsible_user_text {
+  width: 15%;
+}
+.mat-column-created_at_formatted {
+  width: 15%;
+}
+.mat-column-price_formatted {
+  width: 15%;
+}

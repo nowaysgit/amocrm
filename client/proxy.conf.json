@@ -1,0 +1,6 @@
+{
+    "/api": {
+        "target": "https://amocrmtest-server.herokuapp.com",
+        "secure": false
+    }
+}
