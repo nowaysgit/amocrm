@@ -13,7 +13,7 @@ services:
       - ./pgdata:/var/lib/postgresql/data
     ports:
       - ${DB_PORT}:${DB_PORT}
-  backend:
+  server:
     container_name: server-amocrmtest
     build:
       context: ./server
@@ -35,7 +35,7 @@ services:
       - DB_DATABASE=${DB_DATABASE}
       - DB_PORT=${DB_PORT}
       - DB_HOST=db
-  frontend:
+  client:
     container_name: client-amocrmtest
     build:
       context: ./client
