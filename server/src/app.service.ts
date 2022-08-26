@@ -17,7 +17,7 @@ export class AppService {
       }
     | IMessage
   > {
-    if (query.length < 3) {
+    if (!query || query.length < 3) {
       query = '';
     }
     const leads: ILead[] | IMessage = await this.amocrmService.getLeads(
