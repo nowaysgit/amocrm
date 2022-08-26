@@ -2,17 +2,17 @@ version: '3.8'
 
 services:
   db:
-    container_name: postgres-lesson-1
+    container_name: postgres
     image: postgres:14.0-alpine
     restart: always
     environment:
-      - POSTGRES_USER=${DB_USERNAME}
+      - POSTGRES_USER=${DB_USER}
       - POSTGRES_PASSWORD=${DB_PASSWORD}
       - POSTGRES_DB=${DB_DATABASE}
     volumes:
       - ./pgdata:/var/lib/postgresql/data
     ports:
-      - ${TYPEORM_PORT}:${TYPEORM_PORT}
+      - ${DB_PORT}:${DB_PORT}
   backend:
     container_name: server-amocrmtest
     build:
@@ -30,7 +30,7 @@ services:
       - AMOCRM_SUBDOMAIN=${AMOCRM_SUBDOMAIN}
       - AMOCRM_CLIENT_ID=${AMOCRM_CLIENT_ID}
       - AMOCRM_CLIENT_ID_${AMOCRM_CLIENT_ID_}
-      - DB_USERNAME=${DB_USERNAME}
+      - DB_USER=${DB_USER}
       - DB_PASSWORD=${DB_PASSWORD}
       - DB_DATABASE=${DB_DATABASE}
       - DB_PORT=${DB_PORT}
